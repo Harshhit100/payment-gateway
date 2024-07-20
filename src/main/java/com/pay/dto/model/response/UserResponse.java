@@ -10,7 +10,7 @@ public class UserResponse {
     private String firstName;
     private String LastName;
     private String userName;
-    private String lastName;
+    private String fullName;
     private String email;
     private Set<RoleResponse> roles;
 }
