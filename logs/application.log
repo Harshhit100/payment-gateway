@@ -1,0 +1,9 @@
+2024-07-20 10:58:06.964 [main] INFO  com.pay.PaymentApplication - Starting PaymentApplication using Java 11.0.24 on harshit with PID 14592 (/home/harshit/Harshit/Projects/payment-gateway/build/classes/java/main started by harshit in /home/harshit/Harshit/Projects/payment-gateway)
+2024-07-20 10:58:06.966 [main] INFO  com.pay.PaymentApplication - No active profile set, falling back to default profiles: default
+2024-07-20 10:58:07.051 [background-preinit] WARN  o.s.h.c.j.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2024-07-20 10:58:08.106 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-07-20 10:58:08.106 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.46]
+2024-07-20 10:58:08.168 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-07-20 10:58:08.642 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-07-20 10:58:08.917 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-07-20 10:58:10.161 [main] INFO  com.pay.PaymentApplication - Started PaymentApplication in 3.58 seconds (JVM running for 4.048)
