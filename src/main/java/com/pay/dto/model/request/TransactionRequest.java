@@ -17,7 +17,11 @@ public class TransactionRequest {
 
     private String description;
 
-    private Instant createdAt;
+    private String fromWalletBankAccountNumber;
+
+    private String toWalletBankAccountNumber;
+
+    private String createdAt;
 
     private String referenceNumber;
 

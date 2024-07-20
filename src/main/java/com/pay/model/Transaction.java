@@ -25,7 +25,7 @@ public class Transaction {
             sequenceName = "transaction_seq",
             allocationSize = 5
     )
-    private Long userId;
+    private Long id;
 
     @Column(nullable = false)
     private BigDecimal amount;

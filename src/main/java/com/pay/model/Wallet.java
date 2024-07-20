@@ -32,7 +32,7 @@ public class Wallet {
     private Long id;
 
     @Column(length = 34, nullable = false, unique = true)
-    private String iban;
+    private String bankAccountNumber;
 
     @Column(length = 50, nullable = false)
     private String name;

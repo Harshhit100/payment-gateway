@@ -2,11 +2,21 @@ package com.pay.commons;
 
 public final class Constants {
 
-    public static final String TRANSACTION_API = "api/transactions";
+    public static final String TRANSACTION_API = "/api/transactions";
+
+    public static final String WALLET_API = "/api/wallets";
 
     public static final String ID = "/{id}";
 
     public static final String REFERENCE_NUMBER = "/references/{referenceNumber}";
+
+    public static final String BANK_ACCOUNT_NO = "/bankAcc/{bankAcc}";
+
+    public static final String TRANSFER_FUNDS = "/transfer";
+
+    public static final String ADD_FUNDS = "/addFunds";
+
+    public static final String WITHDRAW_FUNDS = "/withdrawFunds";
 
     public static final String USER_ID = "/users/{userId}";
 
