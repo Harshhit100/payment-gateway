@@ -18,8 +18,8 @@ public abstract class WalletRequestMapper {
         this.userService = userService;
     }
 
-    @Mapping(target = "name", expression = "java(org.apache.commons.text.WordUtils.capitalizeFully(dto.getName()))")
-    @Mapping(target = "bankAccountNumber", expression = "java(org.apache.commons.lang3.StringUtils.upperCase(dto.getBankAccountNumber()))")
+    @Mapping(target = "name", expression = "java(org.springframework.util.StringUtils.capitalize(dto.getName().toLowerCase()))")
+    @Mapping(target = "bankAccountNumber", expression = "java(dto.getBankAccountNumber().toUpperCase())")
     @Mapping(target = "user", ignore = true)
     public abstract Wallet toEntity(WalletRequest dto);
 

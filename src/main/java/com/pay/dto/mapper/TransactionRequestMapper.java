@@ -8,6 +8,8 @@ import org.mapstruct.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 
+import java.util.UUID;
+
 @Mapper(componentModel = "spring",
         uses = {WalletService.class, TypeService.class},
         injectionStrategy = InjectionStrategy.CONSTRUCTOR)
@@ -33,7 +35,6 @@ public abstract class TransactionRequestMapper {
     @Mapping(target = "toWallet", ignore = true)
     @Mapping(target = "type", ignore = true)
     public abstract Transaction toEntity(TransactionRequest dto);
-
     public abstract TransactionRequest toDto(Transaction entity);
 
     @AfterMapping

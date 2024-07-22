@@ -10,5 +10,5 @@ import java.util.Set;
 
 @Repository
 public interface RoleRepository extends JpaRepository<Role, Long> {
-    List<Role> getReferenceByType(Set<RoleType> types);
+    List<Role> getReferenceByTypeIsIn(Set<RoleType> types);
 }

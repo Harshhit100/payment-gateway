@@ -8,7 +8,7 @@ import java.util.Set;
 public class UserResponse {
     private Long id;
     private String firstName;
-    private String LastName;
+    private String lastName;
     private String userName;
     private String fullName;
     private String email;

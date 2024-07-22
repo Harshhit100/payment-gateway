@@ -15,8 +15,8 @@ public class RoleService {
 
     private final RoleRepository roleRepository;
 
-    public List<Role> getReferenceByType(Set<RoleType> types) {
-        return roleRepository.getReferenceByType(types);
+    public List<Role> getReferenceByTypeIsIn(Set<RoleType> types) {
+        return roleRepository.getReferenceByTypeIsIn(types);
     }
 
     public List<Role> findAll() {

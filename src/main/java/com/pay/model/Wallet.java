@@ -12,9 +12,9 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-@EqualsAndHashCode(of = {"iban"})
+@EqualsAndHashCode(of = {"bankAccountNumber"})
 @Table(indexes = {
-        @Index(name = "wallet_user_id_iban_key", columnList = "user_id, iban", unique = true),
+        @Index(name = "wallet_user_id_bank_account_number_key", columnList = "user_id, bankAccountNumber", unique = true),
         @Index(name = "wallet_user_id_name_key", columnList = "user_id, name", unique = true)
 })
 public class Wallet {

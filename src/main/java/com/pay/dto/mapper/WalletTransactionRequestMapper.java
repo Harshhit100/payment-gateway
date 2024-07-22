@@ -6,13 +6,13 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
 
-@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
+@Mapper(componentModel = "spring")
 public interface WalletTransactionRequestMapper {
 
     @Mapping(target = "amount", source = "balance")
     @Mapping(target = "description", constant = "Initial balance")
-    @Mapping(target = "fromWalletBankAccountNumber", source = "iban")
-    @Mapping(target = "toWalletBankAccountNumber", source = "iban")
+    @Mapping(target = "fromWalletBankAccountNumber", source = "bankAccountNumber")
+    @Mapping(target = "toWalletBankAccountNumber", source = "bankAccountNumber")
     @Mapping(target = "typeId", constant = "1L")
     TransactionRequest toTransactionDto(WalletRequest entity);
 

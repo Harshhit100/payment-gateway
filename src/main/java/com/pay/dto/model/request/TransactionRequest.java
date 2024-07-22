@@ -12,7 +12,6 @@ public class TransactionRequest {
 
     private Long id;
 
-    @NotNull
     private BigDecimal amount;
 
     private String description;
@@ -21,16 +20,11 @@ public class TransactionRequest {
 
     private String toWalletBankAccountNumber;
 
-    private String createdAt;
+    private Instant createdAt;
 
     private String referenceNumber;
 
     private Status status;
 
-    private String fromWallet;
-
-    private String toWallet;
-
-    @NotNull
     private Long typeId;
 }

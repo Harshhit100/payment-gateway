@@ -16,6 +16,4 @@ public class WalletRequest {
     private BigDecimal balance;
 
     private Long userId;
-
-
 }

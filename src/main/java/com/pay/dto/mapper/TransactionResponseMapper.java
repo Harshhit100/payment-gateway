@@ -7,6 +7,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
@@ -24,6 +25,6 @@ public interface TransactionResponseMapper {
     @AfterMapping
     default void formatCreatedAt(@MappingTarget TransactionResponse dto, Transaction entity) {
         LocalDateTime datetime = LocalDateTime.ofInstant(entity.getCreatedAt(), ZoneOffset.UTC);
-        dto.setCreatedAt(DateTimeFormatter.ofPattern(DATE_TIME_FORMAT).format(datetime));
+        dto.setCreatedAt(Instant.parse(DateTimeFormatter.ofPattern(DATE_TIME_FORMAT).format(datetime)));
     }
 }

@@ -6,6 +6,7 @@ import com.pay.dto.model.response.TransactionResponse;
 import com.pay.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,7 +47,7 @@ public class TransactionController {
 
     @GetMapping(USER_ID)
     public ResponseEntity<ApiResponse<Page<TransactionResponse>>> findAllByUserId(@PathVariable Long userId) {
-        final Page<TransactionResponse> response = (transactionService.findAllByUserId(userId));
+        final Page<TransactionResponse> response = new PageImpl<>(transactionService.findAllByUserId(userId));
         return ResponseEntity.ok(new ApiResponse<>(Instant.now(clock).toEpochMilli(), SUCCESS, response));
     }
 

@@ -38,6 +38,7 @@ public class WalletController {
         return ResponseEntity.ok(new ApiResponse<>(Instant.now(clock).toEpochMilli(), SUCCESS, response));
     }
 
+    @GetMapping(BANK_ACCOUNT_NO)
     public ResponseEntity<ApiResponse<WalletResponse>> findByBankAccountNumber(@PathVariable String bankAccountNumber) {
         final WalletResponse response = walletService.findByBankAccountNumber(bankAccountNumber);
         return ResponseEntity.ok(new ApiResponse<>(Instant.now().toEpochMilli(), SUCCESS, response));
