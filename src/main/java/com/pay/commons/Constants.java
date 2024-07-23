@@ -6,6 +6,12 @@ public final class Constants {
 
     public static final String WALLET_API = "/api/wallets";
 
+    public static final String AUTH_API = "/api/auth";
+
+    public static final String LOGIN = "/login";
+
+    public static final String SIGN_UP = "/signup";
+
     public static final String ID = "/{id}";
 
     public static final String REFERENCE_NUMBER = "/references/{referenceNumber}";
