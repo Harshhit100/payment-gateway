@@ -10,24 +10,7 @@
 #      https://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
-# distribmap<int, vector<int>> mp;
-
-        for(auto x : nums) {
-            string s = to_string(x);
-            int i = 0;
-            for(auto c : s) {
-                i = i*10 + mapping[(c-'0')];
-            }
-            mp[i].push_back(x);
-        }
-
-        vector<int> res;
-
-        for(auto it : mp) {
-            for(auto u : it.second) {
-                res.push_back(u);
-            }
-uted under the License is distributed on an "AS IS" BASIS,
+# distribe is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
