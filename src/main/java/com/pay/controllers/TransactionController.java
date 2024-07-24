@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.time.Clock;
 import java.time.Instant;
+import java.util.UUID;
 
 import static com.pay.commons.Constants.*;
 
@@ -40,7 +41,7 @@ public class TransactionController {
     }
 
     @GetMapping(REFERENCE_NUMBER)
-    public ResponseEntity<ApiResponse<TransactionResponse>> findByReferenceNumber(@PathVariable String referenceNumber) {
+    public ResponseEntity<ApiResponse<TransactionResponse>> findByReferenceNumber(@PathVariable UUID referenceNumber) {
         final TransactionResponse response = transactionService.findByReferenceNumber(referenceNumber);
         return ResponseEntity.ok(new ApiResponse<>(Instant.now().toEpochMilli(), SUCCESS, response));
     }

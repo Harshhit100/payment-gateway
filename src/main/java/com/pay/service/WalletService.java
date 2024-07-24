@@ -9,12 +9,12 @@ import com.pay.dto.model.response.CommandResponse;
 import com.pay.dto.model.response.WalletResponse;
 import com.pay.model.Wallet;
 import com.pay.repository.WalletRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Service

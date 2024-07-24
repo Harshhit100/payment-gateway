@@ -8,11 +8,12 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Repository
 public interface TransactionRepository extends JpaRepository<Transaction, Long> {
 
-    Optional<Transaction> findByReferenceNumber(String referenceNumber);
+    Optional<Transaction> findByReferenceNumber(UUID referenceNumber);
 
     @Query(value = "SELECT t " +
             "FROM Transaction t " +

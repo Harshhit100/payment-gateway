@@ -7,15 +7,15 @@ import com.pay.dto.model.response.CommandResponse;
 import com.pay.dto.model.response.TransactionResponse;
 import com.pay.model.Transaction;
 import com.pay.repository.TransactionRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
-import javax.transaction.Transactional;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -35,7 +35,7 @@ public class TransactionService {
     }
 
     @Transactional
-    public TransactionResponse findByReferenceNumber(String referenceNumber) {
+    public TransactionResponse findByReferenceNumber(UUID referenceNumber) {
         return transactionRepository.findByReferenceNumber(referenceNumber)
                 .map(transactionResponseMapper::toDto)
                 .orElseThrow(() -> new RuntimeException());

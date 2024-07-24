@@ -2,7 +2,6 @@ package com.pay.dto.model.request;
 
 import com.pay.model.Status;
 import lombok.Data;
-import org.jetbrains.annotations.NotNull;
 
 import java.math.BigDecimal;
 import java.time.Instant;
