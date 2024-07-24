@@ -32,7 +32,7 @@ public abstract class SignupRequestMapper {
 
     @Mapping(target = "firstName", expression = "java(org.springframework.util.StringUtils.capitalize(dto.getFirstName().toLowerCase()))")
     @Mapping(target = "lastName", expression = "java(org.springframework.util.StringUtils.capitalize(dto.getLastName().toLowerCase()))")
-    @Mapping(target = "userName", expression = "java(dto.getUsername().trim().toLowerCase())")
+    @Mapping(target = "username", expression = "java(dto.getUsername().trim().toLowerCase())")
     @Mapping(target = "email", expression = "java(dto.getEmail().trim().toLowerCase())")
     @Mapping(target = "password", ignore = true)
     @Mapping(target = "roles", ignore = true)

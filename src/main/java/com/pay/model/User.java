@@ -11,7 +11,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-@EqualsAndHashCode(of = {"userName"})
+@EqualsAndHashCode(of = {"username"})
 @Table(name = "user", schema = "public")
 public class User {
 
@@ -34,7 +34,7 @@ public class User {
     private String lastName;
 
     @Column(length = 20, nullable = false, unique = true)
-    private String userName;
+    private String username;
 
     @Column(length = 50, nullable = false, unique = true)
     private String email;

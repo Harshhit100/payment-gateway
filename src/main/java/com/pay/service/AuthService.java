@@ -46,7 +46,7 @@ public class AuthService {
     public JwtResponse login(final LoginRequest request) {
 
         final Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(request.getUserName().trim(), request.getPassword().trim()));
+                new UsernamePasswordAuthenticationToken(request.getUsername().trim(), request.getPassword().trim()));
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = generateJwtToken(authentication, jwtSecret, jwtExpirationMs);
@@ -60,16 +60,16 @@ public class AuthService {
                 .builder()
                 .token(jwt)
                 .id(userDetails.getId())
-                .userName(userDetails.getUsername())
+                .username(userDetails.getUsername())
                 .firstName(userDetails.getFirstName())
                 .lastName(userDetails.getLastName())
                 .roles(roles).build();
     }
 
     public CommandResponse signup(SignupRequest request) {
-        if (userRepository.existsByUserName(request.getUsername().trim()))
+        if (userRepository.existsByUsernameIgnoreCase(request.getUsername().trim()))
             throw new RuntimeException();
-        if (userRepository.existsByEmail(request.getEmail().trim()))
+        if (userRepository.existsByEmailIgnoreCase(request.getEmail().trim()))
             throw new RuntimeException();
 
         final User user = signupRequestMapper.toEntity(request);
