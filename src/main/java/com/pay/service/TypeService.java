@@ -13,6 +13,6 @@ public class TypeService {
     private final TypeRepository typeRepository;
 
     public Type getReferenceById(Long id) {
-        return typeRepository.getById(id);
+        return typeRepository.getReferenceById(id);
     }
 }

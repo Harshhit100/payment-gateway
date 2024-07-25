@@ -40,7 +40,7 @@ CREATE TABLE type
 CREATE TABLE wallet
 (
     id      BIGINT      NOT NULL,
-    iban    VARCHAR(34) NOT NULL,
+    bank_account_number    VARCHAR(34) NOT NULL,
     name    VARCHAR(50) NOT NULL,
     balance DECIMAL     NOT NULL,
     user_id BIGINT      NOT NULL,
@@ -75,7 +75,7 @@ ALTER TABLE type
     ADD CONSTRAINT uc_type_name UNIQUE (name);
 
 ALTER TABLE wallet
-    ADD CONSTRAINT uc_wallet_iban UNIQUE (iban);
+    ADD CONSTRAINT uc_wallet_bank_account_number UNIQUE (bank_account_number);
 
 ALTER TABLE public."user"
     ADD CONSTRAINT uc_user_email UNIQUE (email);
@@ -83,7 +83,7 @@ ALTER TABLE public."user"
 ALTER TABLE public."user"
     ADD CONSTRAINT uc_user_username UNIQUE (username);
 
-CREATE UNIQUE INDEX wallet_user_id_iban_key ON wallet (user_id, iban);
+CREATE UNIQUE INDEX wallet_user_id_bank_account_number_key ON wallet (user_id, bank_account_number);
 
 CREATE UNIQUE INDEX wallet_user_id_name_key ON wallet (user_id, name);
 

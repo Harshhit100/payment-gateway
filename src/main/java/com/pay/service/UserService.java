@@ -12,7 +12,7 @@ public class UserService {
     private final UserRepository userRepository;
 
     public User getReferenceById(Long id) {
-        return userRepository.getById(id);
+        return userRepository.getReferenceById(id);
     }
 
 }

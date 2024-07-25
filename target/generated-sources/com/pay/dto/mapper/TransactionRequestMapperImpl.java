@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-07-24T16:27:17+0530",
-    comments = "version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-8.0.jar, environment: Java 17.0.9 (Oracle Corporation)"
+    date = "2024-07-25T13:43:40+0530",
+    comments = "version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-8.5.jar, environment: Java 17.0.11 (Ubuntu)"
 )
 @Component
 public class TransactionRequestMapperImpl extends TransactionRequestMapper {

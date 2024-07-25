@@ -20,7 +20,6 @@ import java.io.IOException;
 import static com.pay.utils.JwtUtils.getUsernameFromJwtToken;
 import static com.pay.utils.JwtUtils.validateJwtToken;
 
-@Component
 public class AuthTokenFilter extends OncePerRequestFilter {
 
     @Autowired
