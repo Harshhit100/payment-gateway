@@ -31,14 +31,14 @@ public class TransactionService {
     public TransactionResponse findById(Long id) {
         return transactionRepository.findById(id)
                 .map(transactionResponseMapper::toDto)
-                .orElseThrow(() -> new RuntimeException());
+                .orElseThrow(RuntimeException::new);
     }
 
     @Transactional
     public TransactionResponse findByReferenceNumber(UUID referenceNumber) {
         return transactionRepository.findByReferenceNumber(referenceNumber)
                 .map(transactionResponseMapper::toDto)
-                .orElseThrow(() -> new RuntimeException());
+                .orElseThrow(RuntimeException::new);
    }
 
    @Transactional

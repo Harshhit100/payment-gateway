@@ -16,7 +16,7 @@ public final class Constants {
 
     public static final String REFERENCE_NUMBER = "/references/{referenceNumber}";
 
-    public static final String BANK_ACCOUNT_NO = "/bankAcc/{bankAcc}";
+    public static final String BANK_ACCOUNT_NO = "/bankAcc/{bankAccountNumber}";
 
     public static final String TRANSFER_FUNDS = "/transfer";
 

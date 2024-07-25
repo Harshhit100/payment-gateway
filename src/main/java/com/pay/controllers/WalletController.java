@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.Clock;
 import java.time.Instant;
+import java.util.List;
 
 import static com.pay.commons.Constants.*;
 
@@ -45,8 +46,8 @@ public class WalletController {
     }
 
     @GetMapping(USER_ID)
-    public ResponseEntity<ApiResponse<WalletResponse>> findByUserId(@PathVariable Long userId) {
-        final WalletResponse response = walletService.findById(userId);
+    public ResponseEntity<ApiResponse<List<WalletResponse>>> findByUserId(@PathVariable Long userId) {
+        final List<WalletResponse> response = walletService.findByUserId(userId);
         return ResponseEntity.ok(new ApiResponse<>(Instant.now(clock).toEpochMilli(), SUCCESS, response));
     }
 

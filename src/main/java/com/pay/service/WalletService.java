@@ -39,7 +39,7 @@ public class WalletService {
     public WalletResponse findByBankAccountNumber(String bankAccountNumber) {
         return walletRepository.findByBankAccountNumber(bankAccountNumber)
                 .map(walletResponseMapper::toDto)
-                .orElseThrow(() -> new RuntimeException());
+                .orElseThrow(RuntimeException::new);
     }
 
     @Transactional
@@ -51,7 +51,7 @@ public class WalletService {
 
     public Wallet getByBankAccountNumber(String bankAccountNumber) {
         return walletRepository.findByBankAccountNumber(bankAccountNumber)
-                .orElseThrow(() -> new RuntimeException());
+                .orElseThrow(RuntimeException::new);
     }
 
     @Transactional
@@ -138,10 +138,15 @@ public class WalletService {
     }
 
     public CommandResponse update(Long id, WalletRequest request) {
-        final  Wallet requestWallet = walletRepository.findById(id).orElseThrow(() -> new RuntimeException());
+        final  Wallet requestWallet = walletRepository.findById(id).orElseThrow(RuntimeException::new);
 
         if(!request.getBankAccountNumber().equalsIgnoreCase(requestWallet.getBankAccountNumber()) &&
-            walletRepository.existsByUserIdAndName(request.getUserId(), request.getName())) {
+            walletRepository.existsByBankAccountNumber(request.getBankAccountNumber())) {
+            throw new RuntimeException();
+        }
+
+        if(!request.getName().equalsIgnoreCase(requestWallet.getName()) &&
+        walletRepository.existsByUserIdAndName(request.getUserId(), request.getName())) {
             throw new RuntimeException();
         }
 
@@ -154,7 +159,7 @@ public class WalletService {
 
     public void deleteById(Long id) {
         final Wallet wallet = walletRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException());
+                .orElseThrow(RuntimeException::new);
 
         walletRepository.delete(wallet);
     }

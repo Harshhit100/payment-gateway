@@ -25,6 +25,6 @@ public interface TransactionResponseMapper {
     @AfterMapping
     default void formatCreatedAt(@MappingTarget TransactionResponse dto, Transaction entity) {
         LocalDateTime datetime = LocalDateTime.ofInstant(entity.getCreatedAt(), ZoneOffset.UTC);
-        dto.setCreatedAt(Instant.parse(DateTimeFormatter.ofPattern(DATE_TIME_FORMAT).format(datetime)));
+        dto.setCreatedAt(DateTimeFormatter.ofPattern(DATE_TIME_FORMAT).format(datetime));
     }
 }

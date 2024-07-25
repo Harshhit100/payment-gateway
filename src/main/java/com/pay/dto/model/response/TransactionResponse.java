@@ -10,7 +10,7 @@ public class TransactionResponse {
     private Long id;
     private BigDecimal amount;
     private String description;
-    private Instant createdAt;
+    private String createdAt;
     private String referenceNumber;
     private WalletResponse fromWallet;
     private WalletResponse toWallet;

@@ -8,6 +8,7 @@ import com.pay.model.Role;
 import com.pay.model.Transaction;
 import com.pay.model.User;
 import com.pay.model.Wallet;
+import java.time.Instant;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.UUID;
@@ -16,8 +17,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-07-25T11:54:58+0530",
-    comments = "version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-8.5.jar, environment: Java 17.0.9 (Oracle Corporation)"
+    date = "2024-07-25T18:37:11+0530",
+    comments = "version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-8.5.jar, environment: Java 17.0.11 (Ubuntu)"
 )
 @Component
 public class TransactionResponseMapperImpl implements TransactionResponseMapper {
@@ -33,7 +34,9 @@ public class TransactionResponseMapperImpl implements TransactionResponseMapper 
         transaction.setId( dto.getId() );
         transaction.setAmount( dto.getAmount() );
         transaction.setDescription( dto.getDescription() );
-        transaction.setCreatedAt( dto.getCreatedAt() );
+        if ( dto.getCreatedAt() != null ) {
+            transaction.setCreatedAt( Instant.parse( dto.getCreatedAt() ) );
+        }
         if ( dto.getReferenceNumber() != null ) {
             transaction.setReferenceNumber( UUID.fromString( dto.getReferenceNumber() ) );
         }
