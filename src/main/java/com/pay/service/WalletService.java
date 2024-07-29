@@ -31,7 +31,7 @@ public class WalletService {
     public WalletResponse findById(Long id) {
         return walletRepository.findById(id)
                 .map(walletResponseMapper::toDto)
-                .orElseThrow(() -> new RuntimeException());
+                .orElseThrow(RuntimeException::new);
 
     }
 
